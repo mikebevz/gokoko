@@ -6,8 +6,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-<<<<<<< HEAD
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -24,8 +22,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-=======
->>>>>>> a5a267189cbba39cbfc3cb26294b7f9a354b916d
+
 gem "unicorn", ">= 4.3.1"
 gem "mongoid", ">= 3.1.2"
 gem "haml-rails", ">= 0.4"
@@ -45,21 +42,18 @@ gem "rb-inotify", ">= 0.9.0", :group => :development, :require => false
 gem "rb-fsevent", ">= 0.9.3", :group => :development, :require => false
 gem "rb-fchange", ">= 0.0.6", :group => :development, :require => false
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-<<<<<<< HEAD
+
 gem "bootstrap-sass", ">= 2.3.0.0"
-<<<<<<< HEAD
-=======
->>>>>>> a5a267189cbba39cbfc3cb26294b7f9a354b916d
+
 gem "devise", ">= 2.2.3"
 gem "quiet_assets", ">= 1.0.2", :group => :development
 gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
-<<<<<<< HEAD
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
-=======
 gem "devise", ">= 2.2.3"
->>>>>>> rails_apps_composer: Gemfile
-=======
-gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
->>>>>>> a5a267189cbba39cbfc3cb26294b7f9a354b916d
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'oauth2'
+

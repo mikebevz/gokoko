@@ -8,6 +8,11 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  field :provider, :type => String
+  field :uid, :type => String     
+  field :name, :type => String  
+  
+
   ## Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
@@ -46,5 +51,32 @@ class User
   index({ email: 1 }, { unique: true, background: true })
   field :name, :type => String
   validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :provider, :uid
+  
+  has_many :authentications, :dependent => :delete_all
+  
+  def apply_omniauth(auth)
+    # In previous omniauth, 'user_info' was used in place of 'raw_info'
+    self.email = auth['extra']['raw_info']['email']
+    self.name = auth['extra']['raw_info']['name']
+    # Again, saving token is optional. If you haven't created the column in authentications table, this will fail
+    #authentications.build
+    auth = Authentication.new(:provider => auth['provider'], :uid => auth['uid'], :token => auth['credentials']['token'])
+    auth.user = self
+    auth.save
+    authentications.push auth
+    
+  end
+  
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth['provider']
+      user.uid = auth['uid']
+      if auth['info']
+         user.name = auth['info']['name'] || ""
+         user.email = auth['info']['email'] || ""
+      end
+    end
+  end
+  
 end
