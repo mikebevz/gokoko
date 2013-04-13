@@ -4,10 +4,15 @@ set :stages, %w(production staging)
 require 'capistrano/ext/multistage'
 require 'rvm/capistrano'
 
-#set :rvm_ruby_string, 'ruby-1.9.3-p194@global'
-set :rvm_install_type, :stable
-
+#set :rvm_ruby_string, 'ruby-1.9.3-p362@global'
+set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
+# set :rvm_install_type, :stable
+set :rvm_type, :system
 require "bundler/capistrano"
+set :default_shell, "/bin/bash -l"
+# task :example do
+#   run "echo 'in rvm'", :shell => fetch(:rvm_shell)
+# end
 
 # Sidekiq
 # require 'sidekiq/capistrano'
@@ -27,7 +32,7 @@ set :stack, :passenger_nginx
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
-default_run_options[:shell] = 'bash'
+#default_run_options[:shell] = 'bash'
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 #role :web, "bsk.monster.appfellas.co"                          # Your HTTP server, Apache/etc
