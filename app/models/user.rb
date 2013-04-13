@@ -53,6 +53,8 @@ class User
   
   has_many :authentications, :dependent => :delete_all
   
+  has_many :posts
+  
   def apply_omniauth(auth)
     # In previous omniauth, 'user_info' was used in place of 'raw_info'
     self.email = auth['extra']['raw_info']['email']
