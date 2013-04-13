@@ -11,7 +11,7 @@ ActiveAdmin.register Location do
       f.input :title                  
       f.input :lat
       f.input :lon, :as => :number
-    end                               
+    end                       
     f.actions                         
   end                                 
 end                                   

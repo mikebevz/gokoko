@@ -142,6 +142,11 @@ GEM
       rack-accept
       rack-mount
       virtus
+    grape-rabl (0.2.0)
+      grape (~> 0.3)
+      i18n
+      rabl
+      tilt
     guard (1.7.0)
       formatador (>= 0.2.4)
       listen (>= 0.6.0)
@@ -255,6 +260,8 @@ GEM
       slop (~> 3.4)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
+    rabl (0.8.3)
+      activesupport (>= 2.3.14)
     rack (1.4.5)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -367,6 +374,7 @@ DEPENDENCIES
   factory_girl_rails (>= 4.2.0)
   figaro (>= 0.6.3)
   grape
+  grape-rabl
   guard-bundler (>= 1.0.0)
   guard-cucumber (>= 1.4.0)
   guard-rails (>= 0.4.0)

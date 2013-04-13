@@ -4,6 +4,7 @@ module Api
     version 'v1', :using => :header, :vendor => 'gokoko'
     format :json
     rescue_from :all
+    formatter :json, Grape::Formatter::Rabl
     
     helpers do
       def current_user
@@ -67,6 +68,15 @@ module Api
       end  
       
     end  
+    
+    resource :locations do
+      
+      desc "List of all locations"
+      get '/', :rabl => "locations" do
+        @locations = Location.all
+      end
+      
+    end
     
   end
 end    

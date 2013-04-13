@@ -78,5 +78,11 @@ module Gokoko
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.middleware.use(Rack::Config) do |env|
+      env['api.tilt.root'] = Rails.root.join "app", "views", "api"
+    end
+    
+    #config.active_record.include_root_in_json = false
   end
 end
