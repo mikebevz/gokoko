@@ -57,3 +57,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'oauth2'
 
+gem 'grape'
+
+gem 'capistrano'
+gem 'capistrano-ext'
+gem 'rvm-capistrano'
+

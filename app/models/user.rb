@@ -8,8 +8,6 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  field :provider, :type => String
-  field :uid, :type => String     
   field :name, :type => String  
   
 
