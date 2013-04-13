@@ -18,6 +18,7 @@ Recipes:
 Preferences:
 {:git=>true, :railsapps=>"none", :dev_webserver=>"unicorn", :prod_webserver=>"unicorn", :database=>"mongodb", :orm=>"mongoid", :templates=>"haml", :unit_test=>"rspec", :integration=>"cucumber", :continuous_testing=>"guard", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"none", :authentication=>"devise", :devise_modules=>"default", :authorization=>"none", :form_builder=>"none", :starter_app=>"users_app", :rvmrc=>false, :quiet_assets=>true, :local_env_file=>true, :better_errors=>true, :ban_spiders=>true, :github=>true}
 
+
 h2. Ruby on Rails
 
 This application requires:
@@ -36,6 +37,7 @@ h2. Development
 * Template Engine: Haml
 * Testing Framework: RSpec and Factory Girl and Cucumber
 * Front-end Framework: Twitter Bootstrap (Sass)
+
 * Form Builder: None
 * Authentication: Devise
 * Authorization: None

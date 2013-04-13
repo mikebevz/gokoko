@@ -5,3 +5,4 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 Gokoko::Application.config.secret_token = 'e3f82c51bfb33037ddbc044571095aa0cb695de4b82f7d85f45263894ebc07948f473efb24eb3f55c2a8bf30d29fc10bef4a7a2edf01014f125663e91376feec'
+
