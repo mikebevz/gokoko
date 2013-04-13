@@ -64,5 +64,5 @@ gem 'capistrano'
 gem 'capistrano-ext'
 gem 'rvm-capistrano'
 
-gem 'activeadmin-mongoid', :git => "https://github.com/elia/activeadmin-mongoid.git"
+gem 'activeadmin-mongoid', :git => "https://github.com/elia/activeadmin-mongoid.git", :branch => "latest"
 
