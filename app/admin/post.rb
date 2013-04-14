@@ -20,7 +20,6 @@ ActiveAdmin.register Post do
       f.has_many :comments do |fu|
         fu.input :text
         fu.input :user, :as => :select, :collection => User.all.map {|u| [u.name, u.id]}
-        # fu.input :_destroy, :as => :boolean, :required => false, :label => 'Delete Comment' unless fu.object.new_record?
       end
     end                               
     f.actions                         

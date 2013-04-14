@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-
-//= require_tree .
+//= require jquery.themepunch.plugins.min
+//= require jquery.themepunch.megafoliopro

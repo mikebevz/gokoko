@@ -1,4 +1,30 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+.megafolio-container
+  - @posts.each do |p|
+    .mega-entry.cat-all{:class => "cat-two", :id => "mega-entry-1", :"data-src" => p.image, :"data-width" => "504", :"data-height" => "400"}
+      .mega-covercaption.mega-square-top.mega-landscape-right.mega-portrait-bottom.mega-red
+        .mega-title= p.title
+        .mega-date= p.updated_at
+        %p=p.text
+
+
+:javascript
+
+jQuery(document).ready(function() {
+
+  var api=jQuery('.megafolio-container').megafoliopro({
+  filterChangeAnimation:"fade",	// fade, rotate, scale, rotatescale, pagetop, pagebottom,pagemiddle
+  filterChangeSpeed:800,					// Speed of Transition
+  filterChangeRotate:99,					// If you ue scalerotate or rotate you can set the rotation (99 = random !!)
+  filterChangeScale:0.6,					// Scale Animation Endparameter
+  delay:20,								       // The Time between the Animation of single mega-entry points
+  paddingHorizontal:20,					// Padding between the mega-entrypoints
+  paddingVertical:20,
+  layoutarray:[2]
+  });
+
+  // CALL FILTER FUNCTION IF ANY FILTER HAS BEEN CLICKED
+  jQuery('.filter').click(function() {	
+  api.megafilter(jQuery(this).data('category'));  
+  });
+});
+      
