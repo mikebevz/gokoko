@@ -1,10 +1,17 @@
 .megafolio-container
+  - counter = 1
+  - cats = ["one", "two", "three", "four"]
+  - cat_num = 0
   - @posts.each do |p|
-    .mega-entry.cat-all{:class => "cat-two", :id => "mega-entry-1", :"data-src" => p.image, :"data-width" => "504", :"data-height" => "400"}
-      .mega-covercaption.mega-square-top.mega-landscape-right.mega-portrait-bottom.mega-red
+    .mega-entry.cat-all{:class => "cat-#{cats[cat_num]}", :id => "mega-entry-#{counter}", :"data-src" => p.image, :"data-width" => "504", :"data-height" => "400"}
+      .mega-covercaption.mega-square-top.mega-landscape-right.mega-portrait-bottom.mega-red.mega-transparent
         .mega-title= p.title
         .mega-date= p.updated_at
         %p=p.text
+      - counter = counter + 1
+      - cat_num = cat_num + 1
+      - if cat_num == 3
+        - cat_num = 0
 
 
 :javascript
@@ -19,7 +26,7 @@ jQuery(document).ready(function() {
   delay:20,								       // The Time between the Animation of single mega-entry points
   paddingHorizontal:20,					// Padding between the mega-entrypoints
   paddingVertical:20,
-  layoutarray:[2]
+  layoutarray:[0]
   });
 
   // CALL FILTER FUNCTION IF ANY FILTER HAS BEEN CLICKED
