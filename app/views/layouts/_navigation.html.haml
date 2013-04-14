@@ -1,7 +1,10 @@
 = link_to "GoKoko", root_path, :class => 'brand'
 
-
 %ul.nav.pull-right
+  %li
+    %a{"data-toggle" => "modal", :href => "#myModal", :role => "button", :title => "Submit an article"}
+      %i.icon-pencil
+  
   %li.dropdown
     %a#drop1.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
       = @current_location.title

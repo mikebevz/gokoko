@@ -34,6 +34,38 @@
         - cat_num = 0
 
 
+#myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel Submit Article
+  .modal-body
+    %form.form-horizontal#new_article_form
+      .control-group
+        %label.control-label{:for => "new_article_title"} Title
+        .controls
+          %input{:type => :text, :id => "new_article_title", :name => "new_article_title", :placeholder => "Title"}
+      .control-group
+        %label.control-label{:for => "new_article_text"} Why is it important?
+        .controls
+          %textarea{:id => "new_article_text", :name => "new_article_text", :placeholder => "Your comment"}
+      .control-group
+        %label.control-label{:for => "new_article_url"} Web Address
+        .controls
+          .input-prepend
+            %span.add-on http://
+            %input{:type => :text, :id => "new_article_url", :name => "new_article_url", :placeholder => "Web Address"}    
+      .control-group
+        %label.control-label{:for => "new_article_img"} Got Pic?
+        .controls
+          .input-prepend
+            %span.add-on http://
+            %input{:type => :text, :id => "new_article_image_url", :name => "new_article_image_url", :placeholder => "Image Address"}   
+                  
+          
+  .modal-footer
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+    %button.btn.btn-primary#new_article_submit Send
+
 :javascript
 
 jQuery(document).ready(function() {

@@ -26,7 +26,15 @@ module Api
         @location = Location.find(params[:location])
         @posts = @location.posts
        
-      end  
+      end 
+      
+      post '/' do 
+        
+        puts params
+        
+        {:status => :ok}
+        
+      end 
       
     end  
     
