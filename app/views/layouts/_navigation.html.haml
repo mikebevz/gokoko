@@ -7,7 +7,8 @@
   
   %li.dropdown
     %a#drop1.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
-      = @current_location.title
+      - if @current_location != nil
+        = @current_location.title
       %b.caret
     %ul.dropdown-menu{"aria-labelledby" => "drop1", :role => "menu"}
       - @locations.each do |l|

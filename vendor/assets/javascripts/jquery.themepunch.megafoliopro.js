@@ -132,6 +132,30 @@
 					return container.data('lastorder');
 
 		},
+		
+		megaprependentry: function(entry) {
+
+					// CATCH THE CONTAINER
+					var container=$(this);
+					var newentry=$(entry);
+					newentry.addClass("mega-entry-added");
+					container.prepend(newentry);
+					var opt=container.data('opt');
+
+					prepairNewEntries(container,opt);
+
+					reOrder(container,0);
+
+					rePosition(container,1);
+
+					setTimeout(function() {
+						addFilter(container,opt.filter);
+						reOrder(container,0);
+						rePosition(container,1);
+					},200);
+
+
+		},
 
 		megaappendentry: function(entry) {
 

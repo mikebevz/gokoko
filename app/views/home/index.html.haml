@@ -85,5 +85,7 @@ jQuery(document).ready(function() {
   jQuery('.filter').click(function() {	
   api.megafilter(jQuery(this).data('category'));  
   });
+  
+  window.api = api;
 });
       
