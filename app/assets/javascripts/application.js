@@ -15,3 +15,4 @@
 //= require bootstrap
 //= require jquery.themepunch.plugins.min
 //= require jquery.themepunch.megafoliopro
+//=require  home

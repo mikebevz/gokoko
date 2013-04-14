@@ -1,17 +1,31 @@
 = link_to "GoKoko", root_path, :class => 'brand'
 
+
 %ul.nav.pull-right
-  - if user_signed_in?
-    %li
-      = link_to 'Logout', destroy_user_session_path, :method=>'delete'
-  - else
-    %li
-      = link_to 'Login', new_user_session_path
+  %li.dropdown
+    %a#drop1.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+      = @current_location.title
+      %b.caret
+    %ul.dropdown-menu{"aria-labelledby" => "drop1", :role => "menu"}
+      - @locations.each do |l|
+        %li{:role => "presentation"}
+          %a{:href => "javascript:void(0)", :role => "menuitem", :class => "location_switch", :tabindex => "-1", :"data-id" => l.id}
+            = l.title
+            = "(#{l.posts.length})"
+      
+
   - if user_signed_in?
     %li
       = link_to 'Edit account', edit_user_registration_path
   - else
     %li
       = link_to 'Sign up', new_user_registration_path
+  - if user_signed_in?
+    %li
+      = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+  - else
+    %li
+      = link_to 'Login', new_user_session_path
+      
       
       
