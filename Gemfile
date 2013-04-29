@@ -6,7 +6,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-gem 'therubyracer'
+gem 'therubyracer', :platform => :ruby
+# gem 'therubyracer'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -24,7 +25,7 @@ gem 'therubyracer'
 # gem 'debugger'
 
 
-gem "unicorn", ">= 4.3.1"
+# gem "unicorn", ">= 4.3.1"  - not for win
 gem "mongoid", ">= 3.1.2"
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development
@@ -50,7 +51,7 @@ gem "devise", ">= 2.2.3"
 gem "quiet_assets", ">= 1.0.2", :group => :development
 gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
-gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
+gem "binding_of_caller", ">= 0.7.1", :group => :development#, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "devise", ">= 2.2.3"
 
@@ -66,4 +67,9 @@ gem 'rvm-capistrano'
 
 gem 'activeadmin-mongoid', :git => "https://github.com/elia/activeadmin-mongoid.git", :branch => "latest"
 gem 'grape-rabl'
+
+gem 'extractula'
+gem 'domainatrix'
+
+gem 'pismo'
 
