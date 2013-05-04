@@ -12,7 +12,7 @@ getNewEntry = (data) ->
         mega-withsocialbar mega-smallcaptions">
         <div class="mega-title">'+data.title+'</div>
         <div class="mega-date">'+data.created_at+'</div>
-        <p>sdfsdf</p>
+         <p></p>
         <div class="mega-rightfloat">
           <a href="'+data.url+'" target="_blank">Read article</a>
         </div>

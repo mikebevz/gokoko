@@ -72,4 +72,6 @@ gem 'extractula'
 gem 'domainatrix'
 
 gem 'pismo'
+gem 'dimensions'
+gem 'fastimage'
 

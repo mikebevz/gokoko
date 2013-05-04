@@ -26,6 +26,35 @@ module Api
       def session
         env['rack.session']
       end
+
+      #kasl
+      def get_image_url (url)
+        require 'pismo'
+        require 'fastimage'
+
+        img_url = ""
+        doc = Pismo::Document.new(url)
+        images = doc.images(10)
+
+        if images.empty?
+          return ""
+        end
+
+        w = 0
+        h = 0
+        images.each do |image|
+          size = FastImage.size(image)
+
+          if size[0]>w && size[1]>h
+            img_url = image
+            w = size[0]
+            h = size[1]
+          end
+
+        end
+        img_url
+      end
+      #kasl
     end
     
     resource :posts do
@@ -45,9 +74,14 @@ module Api
         
 
         @current_location = Location.find(session[:current_location])
-        
-        @post = Post.new(:title => params[:new_article_title], :url => params[:new_article_url], 
-          :image => params[:new_article_image_url], :text => params[:new_article_text], 
+        #kasl
+        @image_url = params[:new_article_image_url]
+        if @image_url.blank?
+          @image_url = get_image_url params[:new_article_url]
+        end
+        #kasl
+        @post = Post.new(:title => params[:new_article_title], :url => params[:new_article_url],
+          :image => @image_url, :text => params[:new_article_text],
           :user => current_user, :locations => [@current_location])
         
         @post.save
