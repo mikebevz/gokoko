@@ -1,4 +1,11 @@
 ActiveAdmin.register Location do     
+  
+  controller do
+    def scoped_collection
+      Location.unscoped
+    end
+  end
+  
   index do                            
     column :title                     
     column :lat
@@ -13,5 +20,5 @@ ActiveAdmin.register Location do
       f.input :lon, :as => :number
     end                       
     f.actions                         
-  end                                 
+  end  
 end                                   
